@@ -1,11 +1,13 @@
 import React from 'react'
+import PrivateRoutes from '../Components/PrivateRoutes'
 
 const PrivateLayout = ({children}) => {
     return (
-        <div>
-            este es mi PrivateRoute
-            {children}
-        </div>
+        <PrivateRoutes>
+            <div>
+                
+            </div>
+        </PrivateRoutes>
     )
 }
 

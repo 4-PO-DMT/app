@@ -9,6 +9,7 @@ import PublicLayout from '../Layout/PublicLayout';
 import Dashboard from "../Pages/Admin/Dashboard";
 import Roles from "../Pages/Admin/Roles";
 import Ventas from "../Pages/Admin/Ventas";
+import Features from "../Pages/Public/Features";
 import Index from "../Pages/Public/Index";
 const Routes = () => {
     return (
@@ -29,9 +30,16 @@ const Routes = () => {
                         </Switch>
                     </PrivateLayout>
                 </Route>
-                <Route path='/'>
+                <Route path={['/features', '/']}>
                     <PublicLayout>
-                        <Index/>
+                        <Switch>
+                            <Route path='/features'>
+                                <Features/>
+                            </Route>
+                            <Route path='/'>
+                                <Index/>
+                            </Route>
+                        </Switch>
                     </PublicLayout>
                 </Route>
             </Switch>
